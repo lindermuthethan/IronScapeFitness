@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — IronScape Fitness</title>
+  <meta name="description" content="Get help with IronScape Fitness — contact support, common questions, and troubleshooting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0a0a0a;
+      --surface:    #111111;
+      --surface-2:  #161616;
+      --border:     #1e1e1e;
+      --accent:     #84CC16;
+      --accent-dim: #5a8c0f;
+      --text:       #e8e8e8;
+      --muted:      #888;
+      --font-head:  'Barlow Condensed', sans-serif;
+      --font-body:  'Barlow', sans-serif;
+      --max:        860px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .shell {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(10,10,10,0.8);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid rgba(132,204,22,0.25);
+    }
+    .brand-name {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .brand-name span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--accent); }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #0a0a0a;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #9de020; transform: translateY(-1px); text-decoration: none; }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      padding: 64px 0 52px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(132,204,22,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .page-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border: 1px solid var(--accent-dim);
+      border-radius: 2px;
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    header h1 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2.6rem, 8vw, 4rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 52ch;
+    }
+
+    /* ── CONTENT ── */
+    .content { padding: 56px 0 80px; }
+
+    /* Section blocks */
+    .support-section {
+      margin-bottom: 48px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .section-label {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .support-section h2 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 26px 28px;
+      margin-bottom: 14px;
+      transition: border-color 0.18s;
+    }
+    .card:hover { border-color: #2a2a2a; }
+    .card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 26px 28px;
+      margin-bottom: 14px;
+    }
+    .contact-card .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-card .email-link:hover { text-decoration: underline; }
+    .contact-card .response-note {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 0.78rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* FAQ items */
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 10px;
+      transition: border-color 0.18s;
+    }
+    .faq-item:hover { border-color: var(--accent-dim); }
+    .faq-item h3 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.72;
+      margin: 0;
+    }
+
+    /* Bug report steps */
+    .steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .steps li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: '›';
+      color: var(--accent);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Troubleshooting steps with numbers */
+    .troubleshoot {
+      list-style: none;
+      counter-reset: steps;
+      margin: 0;
+      padding: 0;
+    }
+    .troubleshoot li {
+      counter-increment: steps;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .troubleshoot li:last-child { border-bottom: none; }
+    .troubleshoot li::before {
+      content: counter(steps, decimal-leading-zero);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+      margin-top: 2px;
+      min-width: 24px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 0 52px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.8rem;
+    }
+    .footer-links a { color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 0.78rem; color: #444; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="shell nav-inner">
+    <a class="brand" href="index.html" aria-label="IronScape Fitness home">
+      <img class="brand-logo" src="Designer.png" alt="IronScape Fitness logo" />
+      <span class="brand-name">Iron<span>Scape</span> Fitness</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#info">Download</a>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </div>
+    <a class="btn-primary" href="https://apps.apple.com/us/app/ironscape-fitness/id6759570114" target="_blank" rel="noreferrer">Download the App</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <div class="shell header-inner">
+    <div class="page-eyebrow">✉ Help &amp; Support</div>
+    <h1>Support</h1>
+    <p>Need help with IronScape? You're in the right place — find answers below or reach out directly.</p>
+  </div>
+</header>
+
+<div class="content">
+  <div class="shell">
+
+    <!-- CONTACT -->
+    <div class="support-section">
+      <span class="section-label">01 — Contact</span>
+      <h2>Get in Touch</h2>
+      <div class="contact-card">
+        <p>For bug reports, account questions, or general app support — email us directly. Please include your username and device model when reporting a bug.</p>
+        <a class="email-link" href="mailto:support@ironscapefitness.com">support@ironscapefitness.com</a>
+        <br>
+        <span class="response-note">Response within 1–3 business days</span>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="support-section">
+      <span class="section-label">02 — FAQ</span>
+      <h2>Common Questions</h2>
+
+      <div class="faq-item">
+        <h3>How does XP work?</h3>
+        <p>IronScape converts your workouts into experience points (XP). Different exercises contribute to different muscle skill categories — chest, back, legs, cardio, and more — so your skill profile reflects how you actually train.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does IronScape require an internet connection?</h3>
+        <p>Most functionality works offline — workout and nutrition data are stored locally on your device. An internet connection is required for account sync, social features, and challenges.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Will my progress be saved if I close the app?</h3>
+        <p>Yes. All logged workouts, meals, and XP progression are saved locally and synced to your account, so you can resume anytime — even on a new device.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I report a bug?</h3>
+        <p>Email us at support@ironscapefitness.com with the following details:</p>
+        <ul class="steps" style="margin-top:12px;">
+          <li>What happened and what you expected instead</li>
+          <li>Your iPhone model and iOS version</li>
+          <li>The IronScape app version (found in Settings)</li>
+          <li>Screenshots or a screen recording if possible</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my account?</h3>
+        <p>Go to <em>Settings → Account → Delete Account</em> inside the app. This permanently removes all your data from our servers and cannot be undone.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE REQUESTS -->
+    <div class="support-section">
+      <span class="section-label">03 — Feedback</span>
+      <h2>Feature Requests</h2>
+      <div class="card">
+        <p>IronScape is actively being developed and improved. If you have ideas for new features, progression mechanics, nutrition tools, or training modes you'd like to see in the app, we'd love to hear them.</p>
+        <p>Send your suggestions to <a href="mailto:support@ironscapefitness.com">support@ironscapefitness.com</a> — every request gets read.</p>
+      </div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div class="support-section">
+      <span class="section-label">04 — Troubleshooting</span>
+      <h2>Quick Fixes</h2>
+      <div class="card">
+        <ol class="troubleshoot">
+          <li>Make sure the app is updated to the latest version in the App Store.</li>
+          <li>If a screen appears stuck or unresponsive, force-quit the app and reopen it.</li>
+          <li>If issues persist, restart your device and try again.</li>
+          <li>Check your internet connection if social or sync features aren't working.</li>
+          <li>If nothing resolves the issue, contact us at <a href="mailto:support@ironscapefitness.com">support@ironscapefitness.com</a> with your device details.</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="shell footer-inner">
+    <span class="footer-brand">© <span id="year"></span> IronScape Fitness</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:support@ironscapefitness.com">support@ironscapefitness.com</a>
+    </div>
+    <span class="footer-copy">ironscapefitness.com</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
