@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — IronScape Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --surface:   #111111;
+      --border:    #1e1e1e;
+      --accent:    #84CC16;
+      --accent-dim:#5a8c0f;
+      --text:      #e8e8e8;
+      --muted:     #888;
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      padding: 72px 24px 56px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% -10%, rgba(132,204,22,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+    }
+    .logo-text {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .logo-text span { color: var(--accent); }
+
+    h1 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2.6rem, 8vw, 4.2rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #fff;
+    }
+    .updated-badge {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 5px 14px;
+      border: 1px solid var(--accent-dim);
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ── LAYOUT ── */
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── TOC ── */
+    nav.toc {
+      margin: 48px 0 0;
+      padding: 24px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+    }
+    nav.toc h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    nav.toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    @media (max-width: 520px) { nav.toc ol { grid-template-columns: 1fr; } }
+    nav.toc li {
+      counter-increment: toc;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+    nav.toc li::before {
+      content: counter(toc, decimal-leading-zero) ". ";
+      color: var(--accent);
+      font-weight: 600;
+      font-family: var(--font-head);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    nav.toc a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav.toc a:hover { color: var(--accent); }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-top: 56px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+    .section-number {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    p { margin-bottom: 16px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.875rem;
+    }
+    .data-table thead tr {
+      background: #181818;
+      border-bottom: 2px solid var(--accent-dim);
+    }
+    .data-table th {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .data-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.12s;
+    }
+    .data-table tbody tr:hover { background: #141414; }
+    .data-table td {
+      padding: 14px 16px;
+      vertical-align: top;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .data-table td:first-child {
+      font-weight: 500;
+      color: #fff;
+      white-space: nowrap;
+    }
+    @media (max-width: 600px) {
+      .data-table thead { display: none; }
+      .data-table tbody tr {
+        display: block;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .data-table td {
+        display: block;
+        padding: 4px 0;
+        white-space: normal;
+      }
+      .data-table td:first-child {
+        color: var(--accent);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-family: var(--font-head);
+      }
+    }
+
+    /* ── CALLOUT BOXES ── */
+    .callout {
+      margin: 24px 0;
+      padding: 20px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+    }
+    .callout strong {
+      display: block;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .callout p { font-size: 0.9rem; margin-bottom: 0; }
+
+    /* ── PLAIN LIST ── */
+    ul.plain {
+      list-style: none;
+      margin: 16px 0;
+    }
+    ul.plain li {
+      padding: 8px 0 8px 22px;
+      position: relative;
+      border-bottom: 1px solid #161616;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    ul.plain li:last-child { border-bottom: none; }
+    ul.plain li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+    .right-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .right-card h3 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .right-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ── CONTACT ── */
+    .contact-block {
+      margin-top: 24px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact-block p { color: var(--muted); font-size: 0.9rem; }
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      display: inline-block;
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+    }
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 80px;
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <!-- Dumbbell SVG icon -->
+    <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="16" width="6" height="6" rx="1.5" fill="#84CC16"/>
+      <rect x="7" y="13" width="5" height="12" rx="1.5" fill="#84CC16"/>
+      <rect x="12" y="17.5" width="14" height="3" rx="1.5" fill="#84CC16"/>
+      <rect x="26" y="13" width="5" height="12" rx="1.5" fill="#84CC16"/>
+      <rect x="31" y="16" width="6" height="6" rx="1.5" fill="#84CC16"/>
+    </svg>
+    <span class="logo-text">Iron<span>Scape</span> Fitness</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <div class="updated-badge">Last updated: April 2026</div>
+</header>
+
+<div class="wrapper">
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#what-we-collect">What We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Data</a></li>
+      <li><a href="#third-parties">Third-Party Services</a></li>
+      <li><a href="#sharing">Data Sharing</a></li>
+      <li><a href="#controls">Your Privacy Controls</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. OVERVIEW -->
+  <section id="overview">
+    <span class="section-number">01 — Overview</span>
+    <h2>Overview</h2>
+    <p>
+      IronScape Fitness ("IronScape", "we", "us", or "our") is a mobile fitness application available on iOS (App Store bundle ID: <code>com.lindermuth.ironscape</code>). We built IronScape to help you track workouts, hit personal records, and connect with others who share your drive.
+    </p>
+    <p>
+      This Privacy Policy explains what personal information we collect, why we collect it, how we store and protect it, and the choices you have over your data. We've written it in plain language on purpose — privacy shouldn't require a law degree.
+    </p>
+    <div class="callout">
+      <strong>The short version</strong>
+      <p>We collect only what's needed to run the app and serve you well. We do not sell your data. We do not use advertising networks or analytics SDKs. You can delete your account and all associated data at any time.</p>
+    </div>
+  </section>
+
+  <!-- 2. WHAT WE COLLECT -->
+  <section id="what-we-collect">
+    <span class="section-number">02 — What We Collect</span>
+    <h2>What We Collect</h2>
+    <p>The table below lists every category of information IronScape collects, along with why we collect it.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>What It Includes</th>
+          <th>Why We Collect It</th>
+          <th>Required?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email Address</td>
+          <td>Your email used to register</td>
+          <td>Account creation, authentication, and account recovery via Supabase Auth</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Display Name &amp; Username</td>
+          <td>Name you choose during setup; username is unique and searchable</td>
+          <td>Identifying you within the app and enabling other users to find you</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Profile Photo</td>
+          <td>Avatar image you optionally upload</td>
+          <td>Personalizing your profile; visible to others per your privacy settings</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Bio</td>
+          <td>Up to 100 characters of free text</td>
+          <td>Optional self-description on your profile; visible per your privacy settings</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Workout &amp; Fitness Data</td>
+          <td>Exercises logged, sets, reps, weight, XP per skill, personal records, workout templates</td>
+          <td>Core app functionality; synced to Supabase so you can recover data on a new device</td>
+          <td>Yes (to use core features)</td>
+        </tr>
+        <tr>
+          <td>Nutrition Data</td>
+          <td>Logged meals including name, protein, carbs, fats, and calories</td>
+          <td>Nutrition tracking features; synced so data persists across devices</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Body Metrics</td>
+          <td>Height, weight, age, sex, activity level, fitness goals</td>
+          <td>Calculating personalised calorie and macro targets</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Social Data</td>
+          <td>Who you follow, follow requests, challenge participation and progress</td>
+          <td>Powering social and challenge features within the app</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>User-Generated Content</td>
+          <td>Challenge titles, descriptions, and goals you create</td>
+          <td>Enabling you to create and share challenges with other users</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      We do not collect precise geolocation data, contacts, payment information, biometric identifiers, or any device sensors beyond what is necessary for the above features.
+    </p>
+  </section>
+
+  <!-- 3. HOW WE USE YOUR DATA -->
+  <section id="how-we-use">
+    <span class="section-number">03 — How We Use Your Data</span>
+    <h2>How We Use Your Data</h2>
+    <p>We use the information we collect strictly to operate and improve IronScape Fitness. Specifically:</p>
+    <ul class="plain">
+      <li>To create and authenticate your account</li>
+      <li>To store and sync your workout, nutrition, and body data across devices</li>
+      <li>To calculate personalised calorie and macro recommendations based on your body metrics and goals</li>
+      <li>To display your profile, PRs, and workout history to followers (or publicly, depending on your settings)</li>
+      <li>To power social features — following, challenges, and community engagement</li>
+      <li>To allow other users to search for and follow you by username</li>
+      <li>To enable you to recover your data if you switch devices or reinstall the app</li>
+      <li>To investigate and fix technical issues if you contact us for support</li>
+    </ul>
+    <p>
+      We do not use your data to serve advertisements, build marketing profiles, or make automated decisions that significantly affect you.
+    </p>
+  </section>
+
+  <!-- 4. THIRD-PARTY SERVICES -->
+  <section id="third-parties">
+    <span class="section-number">04 — Third-Party Services</span>
+    <h2>Third-Party Services</h2>
+    <p>IronScape uses one third-party backend service:</p>
+
+    <div class="callout">
+      <strong>Supabase — supabase.com</strong>
+      <p>
+        All user data described in this policy is stored on Supabase servers. Supabase provides our database, authentication system, and file storage (for profile photos). Supabase is GDPR compliant. You can review Supabase's own privacy practices at <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a>.
+      </p>
+    </div>
+
+    <p>
+      We do not use any advertising SDKs, third-party analytics services, crash-reporting services, or social login providers beyond what is described above. If this changes in a future version of the app, this policy will be updated.
+    </p>
+  </section>
+
+  <!-- 5. DATA SHARING -->
+  <section id="sharing">
+    <span class="section-number">05 — Data Sharing</span>
+    <h2>Data Sharing</h2>
+    <p>
+      <strong>We do not sell your personal data to anyone.</strong> Here is what is shared, and with whom:
+    </p>
+    <ul class="plain">
+      <li><strong>With your followers:</strong> If your profile is public, or if a user follows you and you approve them on a private profile, they can see your workout logs, skills XP, personal records, and profile information (photo, bio, username).</li>
+      <li><strong>With the IronScape community:</strong> Your username is searchable by any IronScape user. Display name, bio, and profile photo visibility are governed by your privacy setting.</li>
+      <li><strong>Workout templates:</strong> If you enable the "copyable" toggle on a template, other users can copy it. This is off by default.</li>
+      <li><strong>With Supabase:</strong> As our backend provider, Supabase processes and stores your data on our behalf under a data processing agreement. They are not permitted to use your data for their own purposes.</li>
+      <li><strong>Legal obligations:</strong> We may disclose information if required to do so by law or to protect the rights, property, or safety of IronScape, our users, or others.</li>
+    </ul>
+  </section>
+
+  <!-- 6. PRIVACY CONTROLS -->
+  <section id="controls">
+    <span class="section-number">06 — Your Privacy Controls</span>
+    <h2>Your Privacy Controls</h2>
+    <p>IronScape gives you direct control over your privacy from within the app:</p>
+    <ul class="plain">
+      <li><strong>Public vs. Private profile:</strong> Set your profile to Public (visible to all IronScape users) or Private (only approved followers can see your data).</li>
+      <li><strong>Follow approval:</strong> On a private profile, other users must send a follow request that you approve before they can view your content.</li>
+      <li><strong>Copyable templates:</strong> Choose whether your workout templates can be copied by others. Disabled by default.</li>
+      <li><strong>Sign out:</strong> You can sign out of your account at any time from within the app.</li>
+      <li><strong>Delete your account:</strong> Go to <em>Settings → Account → Delete Account</em>. This permanently and irreversibly deletes all your data from Supabase, including your profile, workouts, nutrition logs, body metrics, and social data.</li>
+    </ul>
+  </section>
+
+  <!-- 7. DATA RETENTION -->
+  <section id="retention">
+    <span class="section-number">07 — Data Retention</span>
+    <h2>Data Retention</h2>
+    <p>
+      We retain your data for as long as your IronScape account exists. We keep data only as long as needed to provide the service to you.
+    </p>
+    <p>
+      When you delete your account (via <em>Settings → Account → Delete Account</em>), all your personal data is permanently deleted from Supabase's servers. This action cannot be undone. If you want to preserve any workout history or records before deleting, we recommend exporting or noting down anything important first, as we do not currently offer a bulk data export tool.
+    </p>
+  </section>
+
+  <!-- 8. YOUR RIGHTS -->
+  <section id="rights">
+    <span class="section-number">08 — Your Rights</span>
+    <h2>Your Rights</h2>
+    <p>
+      Depending on where you live, you may have certain rights regarding your personal data. We respect these rights regardless of your location:
+    </p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="icon">👁</div>
+        <h3>Right to Access</h3>
+        <p>All your data is viewable in-app. Your workout history, nutrition logs, profile, and settings are always accessible to you.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">✏️</div>
+        <h3>Right to Correct</h3>
+        <p>Edit your profile, body metrics, and any logged data directly in the app's Settings and editing screens.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🗑</div>
+        <h3>Right to Delete</h3>
+        <p>Delete your account and all associated data permanently via Settings → Account → Delete Account.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🚫</div>
+        <h3>Right to Object</h3>
+        <p>You can control how your data is shared with others through the app's privacy settings at any time.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">📬</div>
+        <h3>Right to Portability</h3>
+        <p>Your data is viewable in-app. If you need a structured export, contact us and we'll do our best to help.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">⚖️</div>
+        <h3>CCPA / GDPR</h3>
+        <p>We do not sell personal data. California and EU/EEA residents can exercise additional rights by contacting us directly.</p>
+      </div>
+    </div>
+
+    <p>
+      To exercise any of these rights or if you have a privacy concern that can't be resolved in-app, please contact us at the email address below.
+    </p>
+  </section>
+
+  <!-- 9. CHILDREN -->
+  <section id="children">
+    <span class="section-number">09 — Children's Privacy</span>
+    <h2>Children's Privacy</h2>
+    <p>
+      IronScape Fitness is not directed at children under the age of 13. We do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has created an account, please contact us immediately and we will delete the account and all associated data.
+    </p>
+    <p>
+      If you are between 13 and 17, please ensure a parent or guardian has reviewed this policy before using the app.
+    </p>
+  </section>
+
+  <!-- 10. POLICY CHANGES -->
+  <section id="changes">
+    <span class="section-number">10 — Policy Changes</span>
+    <h2>Policy Changes</h2>
+    <p>
+      We may update this Privacy Policy from time to time — for example, if we add new features that collect different data, or if laws change. When we do, we'll update the "Last Updated" date at the top of this page.
+    </p>
+    <p>
+      For material changes, we'll make reasonable efforts to notify you — for example, via a notice within the app or an email to the address on your account. Continuing to use IronScape after a policy update constitutes your acceptance of the revised policy.
+    </p>
+    <p>
+      This policy is published at <a href="https://ironscapefitness.com/privacy-policy.html" target="_blank" rel="noopener">ironscapefitness.com/privacy-policy.html</a>.
+    </p>
+  </section>
+
+  <!-- 11. CONTACT -->
+  <section id="contact">
+    <span class="section-number">11 — Contact Us</span>
+    <h2>Contact Us</h2>
+    <p>
+      If you have questions about this Privacy Policy, want to exercise a privacy right, or need to report a concern, reach out to us directly:
+    </p>
+    <div class="contact-block">
+      <p>IronScape Fitness — Privacy Inquiries</p>
+      <a href="mailto:support@ironscapefitness.com">support@ironscapefitness.com</a>
+    </div>
+    <p style="margin-top:18px; font-size:0.85rem; color:var(--muted);">
+      We aim to respond to all privacy-related inquiries within 5 business days.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 IronScape Fitness &nbsp;·&nbsp; <a href="https://ironscapefitness.com">ironscapefitness.com</a> &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
